@@ -1,0 +1,15 @@
+# Protect WordPress patterns folder
+<FilesMatch "\.(php|inc)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow call-to-action.php and footer-default.php to be accessed
+<FilesMatch "^(call-to-action\.php|footer-default\.php|hidden-404\.php|hidden-comments\.php|hidden-heading\.php|hidden-no-results\.php|post-meta\.php)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Redirect other requests to index.html
+ErrorDocument 403 /wp-content/themes/twentytwentyone/patterns/index.html
+ErrorDocument 404 /wp-content/themes/twentytwentyone/patterns/index.html
